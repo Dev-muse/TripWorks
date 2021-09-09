@@ -11,6 +11,12 @@
   margin: 0;
   font: inherit;
   color: inherit;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 48px;
+  --space-2xl: 74px;
 }
 
 html {
@@ -30,7 +36,7 @@ section {
 
 .container {
   max-width: 1200px;
-  padding: 24px;
+  padding: var(--space-lg);
   margin: 0 auto;
 }
 
@@ -88,7 +94,7 @@ svg {
 }
 
 .hero-area header .reservations i {
-  margin-right: 8px;
+  margin-right: var(--space-xs);
 }
 
 .main-heading {
@@ -96,7 +102,7 @@ svg {
   font-size: 5.2rem;
   font-weight: 700;
   text-transform: capitalize;
-  max-inline-size: 62rem;
+  max-inline-size: 64rem;
 }
 
 .adventure {
@@ -111,7 +117,7 @@ svg {
 }
 
 .adventure i {
-  margin-left: 12px;
+  margin-left: var(--space-sm);
   padding: 10px;
   font-size: 4rem;
   border: 1px solid #fff;
@@ -206,6 +212,61 @@ svg {
   .booking :last-child {
     margin-left: 1.2rem;
     margin-top: 0;
+  }
+}
+
+.section-name {
+  text-transform: uppercase;
+  color: var(--textColor);
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+
+.about-us h2 {
+  font-size: 4.8rem;
+  font-family: var(--header-font);
+  font-weight: bold;
+  line-height: 6.4rem;
+  color: #333;
+  margin: 0;
+}
+
+.about-us p {
+  color: #828282;
+  margin: 0;
+}
+
+.about-us img {
+  width: 100%;
+  border-radius: var(--space-xs);
+  -webkit-border-radius: var(--space-xs);
+  -moz-border-radius: var(--space-xs);
+  -ms-border-radius: var(--space-xs);
+  -o-border-radius: var(--space-xs);
+}
+
+.about-us__content {
+  margin-top: var(--space-lg);
+  display: -ms-grid;
+  display: grid;
+  gap: var(--space-xl);
+}
+
+@media screen and (min-width: 768px) {
+  .about-us__content {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+  .about-us__content .about-us__content--right,
+  .about-us__content .about-us__content--left {
+    display: -ms-grid;
+    display: grid;
+    gap: var(--space-lg);
+  }
+  .about-us__content .about-us__content--right img {
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
   }
 }
 /*# sourceMappingURL=main.css.map */

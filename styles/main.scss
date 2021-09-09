@@ -1,12 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Poppins:wght@400;500;600;700;800;900&display=swap");
 
-// Omni man colors;
-// - #B41611
-// - #A1B0B4
-// - #0F1007
-// - #124679
-// - #A4B6C3
-
 :root {
   --primary: #e85721;
   --textColor: #a4b6c3;
@@ -18,6 +11,15 @@
   margin: 0;
   font: inherit;
   color: inherit;
+
+  //   spacing:
+
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 48px;
+  --space-2xl: 74px;
 }
 
 html {
@@ -36,7 +38,7 @@ section {
 }
 .container {
   max-width: 1200px;
-  padding: 24px;
+  padding: var(--space-lg);
   margin: 0 auto;
 }
 
@@ -83,7 +85,7 @@ svg {
       font-weight: 500;
 
       i {
-        margin-right: 8px;
+        margin-right: var(--space-xs);
       }
     }
   }
@@ -94,7 +96,7 @@ svg {
   font-size: 5.2rem;
   font-weight: 700;
   text-transform: capitalize;
-  max-inline-size: 62rem;
+  max-inline-size: 64rem;
 }
 
 .adventure {
@@ -103,7 +105,7 @@ svg {
   margin-top: 2rem;
   text-transform: capitalize;
   i {
-    margin-left: 12px;
+    margin-left: var(--space-sm);
     padding: 10px;
     font-size: 4rem;
     border: 1px solid #fff;
@@ -172,6 +174,7 @@ svg {
     height: 100px;
     width: 200px;
   }
+
   .booking__inputs {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -197,6 +200,62 @@ svg {
     :last-child {
       margin-left: 1.2rem;
       margin-top: 0;
+    }
+  }
+}
+
+// About section
+
+.section-name {
+  text-transform: uppercase;
+  color: var(--textColor);
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+
+.about-us {
+  h2 {
+    font-size: 4.8rem;
+    font-family: var(--header-font);
+    font-weight: bold;
+    line-height: 6.4rem;
+    color: #333;
+    margin: 0;
+  }
+  p {
+    color: #828282;
+    margin: 0;
+  }
+  img {
+    width: 100%;
+    border-radius: var(--space-xs);
+    -webkit-border-radius: var(--space-xs);
+    -moz-border-radius: var(--space-xs);
+    -ms-border-radius: var(--space-xs);
+    -o-border-radius: var(--space-xs);
+  }
+}
+
+.about-us__content {
+  margin-top: var(--space-lg);
+  display: grid;
+  gap: var(--space-xl);
+}
+// Responsive rules about-us section:
+
+@media screen and (min-width: 768px) {
+  .about-us__content {
+    grid-template-columns: repeat(2, 1fr);
+    .about-us__content--right,
+    .about-us__content--left {
+      display: grid;
+      gap: var(--space-lg);
+    }
+
+    .about-us__content--right {
+      img {
+        order: -1;
+      }
     }
   }
 }
