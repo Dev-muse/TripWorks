@@ -1,7 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Poppins:wght@400;500;600;700;800;900&display=swap");
 
-// font-family: "Playfair Display", serif;
-// font-family: "Poppins", sans-serif;
+// Omni man colors;
+// - #B41611
+// - #A1B0B4
+// - #0F1007
+// - #124679
+// - #A4B6C3
+
+:root {
+  --primary: #e85721;
+  --textColor: #a4b6c3;
+  --header-font: "Playfair Display", serif;
+}
 
 * {
   box-sizing: border-box;
@@ -9,10 +19,184 @@
   font: inherit;
   color: inherit;
 }
+
 html {
   font-size: 62.5%;
 }
+
 body {
   margin: 0;
   color: #222;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.6rem;
+}
+
+section {
+  padding: 74px 0;
+}
+.container {
+  max-width: 1200px;
+  padding: 24px;
+  margin: 0 auto;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+
+svg {
+  height: 37px;
+  width: 157px;
+}
+
+// hero section
+
+.hero-area {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5)),
+    url(/images/image-1.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .reservations {
+      background-color: var(--primary);
+      border: none;
+      padding: 12px 24px;
+      border-radius: 50px;
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+      -ms-border-radius: 50px;
+      -o-border-radius: 50px;
+      text-transform: capitalize;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+
+      i {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+.main-heading {
+  font-family: var(--header-font);
+  font-size: 5.2rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  max-inline-size: 62rem;
+}
+
+.adventure {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  text-transform: capitalize;
+  i {
+    margin-left: 12px;
+    padding: 10px;
+    font-size: 4rem;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+  }
+}
+
+.booking {
+  margin-top: 10rem;
+}
+
+.booking__inputs {
+  background-color: #fff;
+  color: #222;
+  padding: 2.4rem;
+  border-radius: 0.8rem;
+  -webkit-border-radius: 0.8rem;
+  -moz-border-radius: 0.8rem;
+  -ms-border-radius: 0.8rem;
+  -o-border-radius: 0.8rem;
+  display: grid;
+  gap: 1.6rem;
+}
+
+.booking__input {
+  label {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: var(--textColor);
+    font-weight: 500;
+  }
+
+  input,
+  select {
+    display: block;
+    width: 100%;
+    border: none;
+    padding: 0.8rem 0;
+    cursor: pointer;
+    font-weight: 500;
+  }
+}
+
+.booking__button {
+  background-color: var(--primary);
+  padding: 4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-top: 1.2rem;
+  border-radius: 0.8rem;
+  -webkit-border-radius: 0.8rem;
+  -moz-border-radius: 0.8rem;
+  -ms-border-radius: 0.8rem;
+  -o-border-radius: 0.8rem;
+  box-shadow: 0 4px 20px rgba(232, 87, 33, 0.6);
+}
+
+// Hero section responsive rules
+
+@media screen and (min-width: 768px) {
+  svg {
+    height: 100px;
+    width: 200px;
+  }
+  .booking__inputs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+
+    :first-child {
+      border: none;
+      padding-left: 0;
+    }
+    :last-child {
+      padding-right: 0;
+    }
+  }
+  .booking__input {
+    padding: 0px 2.4rem;
+    border-left: 1px solid rgb(201, 179, 179);
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .booking {
+    display: flex;
+    :last-child {
+      margin-left: 1.2rem;
+      margin-top: 0;
+    }
+  }
 }
